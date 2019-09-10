@@ -74,3 +74,5 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.8'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
 
 gem 'simple_form'
+
+gem "font-awesome-rails"
