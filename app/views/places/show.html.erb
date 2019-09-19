@@ -67,7 +67,7 @@
   </div>
 </div>
 
-<div class="col-10 offset-1">
+<div class="col-10 offset-1 mt-5">
   <h1 class="float-left">Comments</h1>
   <!-- Button trigger modal comment -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModalComment">
@@ -77,7 +77,7 @@
 
 <div class="clearfix"></div>
 
-<div class="row">
+<div class="row offset-1">
   <% @place.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <blockquote>
@@ -85,7 +85,7 @@
           <b><%= comment.humanized_rating %></b> -
         <% end %>
         <%= comment.message %>
-        <small><%= comment.user.email %></small>
+        <small><i>By</i> <%= comment.user.email %></small>
       </blockquote>
     </div>
   <% end %>
@@ -115,7 +115,7 @@
   </div>
 </div>
 
-<div class="col-10 offset-1">
+<div class="col-10 offset-1 mt-5">
   <h1 class="float-left">Photos</h1>
   <!-- Button trigger modal photo -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModalPhoto">
@@ -126,18 +126,16 @@
 <div class="clearfix"></div>
 
 
-<div class="row">
+<div class="row offset-1">
   <% @place.photos.each do |photo| %>
     <div class="col-12 col-sm-6">
-      <blockquote>
-        <%= image_tag(photo.picture.url, class: 'img-fluid photo-images') if photo.picture? %>
-        <br />
+      <div class="d-inline-flex flex-column mx-auto text-center">
+        <%= image_tag(photo.picture.url, class: 'p-2 rounded img-fluid photo-images photo-images-show') if photo.picture? %>
         <% if photo.caption.present? %>
-          <b><%= photo.caption %></b>
+          <b class="p-2"><%= photo.caption %></b>
         <% end %>
-        <br />
-        <small><%= photo.user.email %></small>
-      </blockquote>
+        <small class="p-2"><i>By </i><%= photo.user.email %></small>
+      </div>
     </div>
   <% end %>
 </div>
