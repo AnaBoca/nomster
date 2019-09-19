@@ -17,8 +17,12 @@
           <%= place.comments.last.message %>
           <small><%= place.comments.last.user.email %></small>
         </blockquote>
+
       </div>
     <% end %>
+
+    <%= image_tag(place.photos.first.picture.url, class: 'mx-auto d-block photo-images') %>
+    <p class="text-center"><%= place.photos.first.caption %></p>
 
   </div>
 <% end %>
