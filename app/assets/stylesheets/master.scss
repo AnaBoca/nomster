@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: image_url('crossword.png');
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -68,4 +69,8 @@ blockquote:before {
 
 blockquote p {
   display: inline;
+}
+
+.photo-images {
+  max-height: 250px;
 }
